@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+
+    <style>
+        .box-contaner{
+            display: flex;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            background-color: rgba(255, 255, 0, 0.7);
+            transition: 0.5s;
+        }
+        .box:hover{
+
+            /* transform-origin: right bottom; */
+            /* transform: translate(30px, 10px); */
+            /* transform: skewY(-15deg); */
+            /* transform: scale(2) rotate(15deg); */
+            width: 200px;
+            background-color: red;
+            /* height: 200px; */
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Transform</h1>
+    <p>
+        Transform 은 GPU를 쓰기에 굉장히 빠르다<br/>
+        재밌는 점은 hover시 width, heigth값을 변경하면 다른 박스들이 밀린다. 즉, 브라우저가 위치계산을 다시한다.<br/>
+        그런데, Transform을 사용하면 해당 박스만 다시 그려지고, 다른 박스들의 영향이 없다.<br/>
+    </p>
+    <div class="box-contaner">
+        <div class="box">A</div>
+        <div class="box">b</div>
+        <div class="box">c</div>
+        <div class="box">d</div>
+        <div class="box">e</div>
+    </div>
+    <p>
+        some2
+    </p>
+
+    
+</body>
+</html>
