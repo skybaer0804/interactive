@@ -4,26 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
 
     <style>
         .box-contaner{
             display: flex;
         }
-        .box{
+        .box-contaner .box{
             width: 100px;
             height: 100px;
             border: 2px solid #000;
             background-color: rgba(255, 255, 0, 0.7);
             transition: 0.5s;
         }
-        .box:hover{
+        .box-contaner .box:hover{
 
             /* transform-origin: right bottom; */
             /* transform: translate(30px, 10px); */
             /* transform: skewY(-15deg); */
             /* transform: scale(2) rotate(15deg); */
             width: 200px;
+            background-color: red;
+            /* height: 200px; */
+        }
+        
+        .box-contaner2{
+            display: flex;
+        }
+        .box-contaner2 .box{
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            background-color: rgba(255, 255, 0, 0.7);
+            transition: 0.5s;
+        }
+        .box-contaner2 .box:hover{
+
+            /* transform-origin: right bottom; */
+            /* transform: translate(30px, 10px); */
+            /* transform: skewY(-15deg); */
+            transform: scale(1.5) rotate(15deg);
+            /* width: 200px; */
+            background-color: red;
+            /* height: 200px; */
+        }
+        .box-contaner3{
+            display: flex;
+        }
+        .box-contaner3 .box{
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            background-color: rgba(255, 255, 0, 0.7);
+            transition: 0.5s;
+        }
+        .box-contaner3 .box:hover{
+
+            /* transform-origin: right bottom; */
+            /* transform: translate(30px, 10px); */
+            transform: skewY(-15deg);
+            /* transform: scale(2) rotate(15deg); */
+            /* width: 200px; */
+            background-color: red;
+            /* height: 200px; */
+        }
+        .box-contaner4{
+            display: flex;
+        }
+        .box-contaner4 .box{
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            background-color: rgba(255, 255, 0, 0.7);
+            transition: 0.5s;
+        }
+        .box-contaner4 .box:hover{
+
+            /* transform-origin: right bottom; */
+            transform: translate(30px, 10px);
+            /* transform: skewY(-15deg); */
+            /* transform: scale(2) rotate(15deg); */
+            /* width: 200px; */
+            background-color: red;
+            /* height: 200px; */
+        }
+        .box-contaner5{
+            display: flex;
+        }
+        .box-contaner5 .box{
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            background-color: rgba(255, 255, 0, 0.7);
+            transition: 0.5s;
+        }
+        .box-contaner5 .box:hover{
+
+            transform-origin: right bottom;
+            /* transform: translate(30px, 10px); */
+            /* transform: skewY(-15deg); */
+            transform: rotate(45deg);
+            /* width: 200px; */
             background-color: red;
             /* height: 200px; */
         }
@@ -35,17 +116,49 @@
         Transform 은 GPU를 쓰기에 굉장히 빠르다<br/>
         재밌는 점은 hover시 width, heigth값을 변경하면 다른 박스들이 밀린다. 즉, 브라우저가 위치계산을 다시한다.<br/>
         그런데, Transform을 사용하면 해당 박스만 다시 그려지고, 다른 박스들의 영향이 없다.<br/>
+        - Transform의 default 변화축은 중심축이다.</br>
     </p>
+
+    <h1>Transition - flex and transition</h1>
     <div class="box-contaner">
         <div class="box">A</div>
-        <div class="box">b</div>
-        <div class="box">c</div>
-        <div class="box">d</div>
-        <div class="box">e</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
     </div>
-    <p>
-        some2
-    </p>
+    <h1>Transform - scale and rotate</h1>
+    <div class="box-contaner2">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
+    <h1>Transform - skewY</h1>
+    <div class="box-contaner3">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
+    <h1>Transform - translate</h1>
+    <div class="box-contaner4">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
+    <h1>Transform - transform-origin: right bottom</h1>
+    <div class="box-contaner5">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
 
     
 </body>
