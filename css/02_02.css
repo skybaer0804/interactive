@@ -1,0 +1,46 @@
+.stage{
+    overflow: hidden;
+    position:relative;
+    width: 100vw;
+    height: 75vw;
+    background-color: #fff000
+}
+
+@keyframes moving {
+    from{
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(90vw);
+    }
+}
+
+.ilbuni{
+    position: absolute; /* 이미지가 움직일때 stage안에서 움직이게 하도록 positon 줌*/
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat; /* 이미지 반복 안함 */
+    background-position: 50% 50%; /*위치는 가운데*/
+    background-size: contain;   /* 이미지가 다 보이게됨,컨테이너에 딱 맞음. 반대는 cover*/
+    animation: moving alternate infinite;
+}
+
+.a {
+    left: 5%;
+    bottom: 5%;
+    background-image: url(../images/ilbuni_0.png);
+    animation-duration: 4s;
+}
+.b {
+    left: 10%;
+    bottom: 3%;
+    background-image: url(../images/ilbuni_1.png);
+    animation-duration: 2s;
+}
+.c {
+    left: 7%;
+    bottom: 10%;
+    background-image: url(../images/ilbuni_2.png);
+    animation-duration: 6s;
+}

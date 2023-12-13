@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/02_02.css">
+</head>
+<body>
+    <div class="stage">
+        <div class="ilbuni a"></div>
+        <div class="ilbuni b"></div>
+        <div class="ilbuni c"></div>
+    </div>
+
+    <script>
+        function remove(){
+            const ilbuniGroup = document.querySelectorAll('.ilbuni');
+            const stage = document.querySelector('.stage');
+
+
+            const clickHandler = (e) => {
+                stage.removeChild(e.currentTarget);
+            }
+
+            for (let i = 0; i< ilbuniGroup.length; i++){
+                ilbuniGroup[i].addEventListener('click', clickHandler);
+            }
+        }
+        remove();
+    </script>
+</body>
+</html>
