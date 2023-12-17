@@ -21,12 +21,20 @@
 
 
             const clickHandler = (e) => {
-                stage.removeChild(e.currentTarget);
+                // 누른 애가 e.target이 ilbuni 클래스를 갖는지 판단하고 없애는 예외케이스
+                if(e.target.classList.contains('ilbuni')){
+                    stage.removeChild(e.target);
+                }
             }
 
-            for (let i = 0; i< ilbuniGroup.length; i++){
-                ilbuniGroup[i].addEventListener('click', clickHandler);
-            }
+            // for (let i = 0; i< ilbuniGroup.length; i++){
+                //여러번 이벤트를 등록해주는건 바람직하지 않다.
+                // ilbuniGroup[i].addEventListener('click', clickHandler);
+
+                // 부모에게 이벤트를 위임한다.
+            // }
+
+            stage.addEventListener('click', clickHandler)
         }
         remove();
     </script>
