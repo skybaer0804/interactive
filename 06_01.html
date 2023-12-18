@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes ball-ani {
+            from { /*시작 지점, 0%*/
+                transform: translate(0, 0); 
+            }
+            to{ /*끝 지점, 100% */
+                transform: translate(200px, 200px);
+            }
+        }
+        .ball{
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin: -15px 0 0 -15px; /*센터 맞추기*/
+
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: red;
+            transition: 0.3s;
+            /* animation: ball-ani 1s 3 alternate forwards; */
+            /*
+                ball-ani 애니메이션을
+                1s 애니메이션 진행시간(duration), 
+                3번 반복(iteration-count), 
+                번갈아가도록(direction),
+                to상태(100%)로 애니메이션이 끝날때 유지한다.(fill-mode)
+            */
+        }
+
+        .ball.end{
+            border: 5px solid red;
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+
+    <script>
+        const ballElem = document.querySelector('.ball');
+
+        // element에 style에 접근해서 직접 animation 넣어주기
+        ballElem.addEventListener('click', function(){
+            ballElem.style.animation = 'ball-ani 1s 3 alternate forwards';
+        })
+
+        ballElem.addEventListener('animationend', function() {
+            ballElem.classList.add('end');
+        })
+
+        ballElem.addEventListener('animationiteration', function(e){
+            console.log('반복!')
+        });
+
+        //animationstart
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">취소</button>
+
+    <script>
+        // requestAnimationFrame
+        // 재귀적으로 함수를 호출해서 반복시키는 동작 원리.
+
+        let timeId;
+        let n = 0;
+
+        function sample(){
+            n++;
+            console.log(n);
+
+            if( n > 200 ){
+                return;
+            }
+
+            timeId = requestAnimationFrame(sample);
+
+        }
+
+        sample();
+
+        const btnElem = document.querySelector('#button');
+
+        btnElem.addEventListener('click', function() {
+            cancelAnimationFrame(timeId); //실행 취소 함수
+        })
+    </script>
+    
+</body>
+</html>

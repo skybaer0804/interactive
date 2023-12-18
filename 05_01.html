@@ -30,9 +30,10 @@
         .ilbuni{
             width: 100px;
             margin: 20px auto;
+            transition: 1s;
         }
 
-        .ilbuni .zoom{
+        .ilbuni.zoom{
             transform: scale(2);
         }
     </style>
@@ -49,15 +50,28 @@
         </figure>
     </div>
     <script>
-        (
-            function(){
-                const outputElem = document.querySelector('.output');
+        (function(){
+            const outputElem = document.querySelector('.output');
+            const ilbuniElem = document.querySelector('.ilbuni');
 
-                window.addEventListener('scroll', function(){
-                    outputElem.innerHTML = window.scrollY;
-                })
+            function showValue(){
+                // outputElem.innerHTML = window.pageYOffset;
+                // outputElem.innerHTML = window.scrollY;
+                // outputElem.innerHTML = ilbuniElem.offsetTop;
+                let posY = ilbuniElem.getBoundingClientRect().top;
+                outputElem.innerHTML = posY;
+
+                if(posY < window.innerHeight * 0.3){
+                    ilbuniElem.classList.add('zoom');
+                }else{
+                    ilbuniElem.classList.remove('zoom');
+                }
             }
-        )();
+
+            window.addEventListener('scroll', function(){
+                showValue();
+            })
+        })();
     </script>
 </body>
 </html>
